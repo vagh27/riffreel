@@ -65,7 +65,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 			//console.log(item);
 			$scope.key = $scope.email ? $scope.email.slice(0, $scope.email.indexOf("@")) : 'undefined';
 			item.formData.push({
-				key: $scope.email + '/' + item._file.name,
+				key: $scope.email + '/' + $scope.project + '/' + item._file.name,
 				email: $scope.email
 			});
 		};
@@ -132,6 +132,11 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 				$scope.status.text = "Please enter a valid email."
 				return false;
 			}
+
+            if (!$scope.project) {
+                $scope.status.text = "Please enter a project name."
+                return false;
+            }
 
 			if ($scope.uploader.getNotUploadedItems().length === 0){
 				$scope.status.text = "Please provide at least one video clip for upload."

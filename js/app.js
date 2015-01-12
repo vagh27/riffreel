@@ -5,7 +5,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 
 	'use strict';
 
-	app.controller('AppController', ['$scope', '$http', 'FileUploader', function($scope, $http, FileUploader) {
+	app.controller('AppController', ['$scope', '$http', '$filter', 'FileUploader', function($scope, $http, $filter, FileUploader) {
 
 		$scope.status = {};
 		$scope.completed = [];
@@ -62,8 +62,8 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 			//console.info('onAfterAddingAll', addedFileItems);
 		};
 		uploader.onBeforeUploadItem = function(item) {
-			//console.log(item);
 			$scope.key = $scope.email ? $scope.email.slice(0, $scope.email.indexOf("@")) : 'undefined';
+			$scope.project = $filter('friendlyUrl')($scope.project);
 			item.formData.push({
 				key: $scope.email + '/' + $scope.project + '/' + item._file.name,
 				email: $scope.email
@@ -133,10 +133,10 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 				return false;
 			}
 
-            if (!$scope.project) {
-                $scope.status.text = "Please enter a project name."
-                return false;
-            }
+			if (!$scope.project) {
+				$scope.status.text = "Please enter a project name."
+				return false;
+			}
 
 			if ($scope.uploader.getNotUploadedItems().length === 0){
 				$scope.status.text = "Please provide at least one video clip for upload."
@@ -188,4 +188,30 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 	});
 
 })(angular, Riff);
+
+(function(ng, app) {
+
+	'use strict';
+
+	app.filter('friendlyUrl', function() {
+		return function(str) {
+
+			// convert spaces to '-'
+			str = str.replace(/ /g, '-');
+
+			// Make lowercase
+			str = str.toLowerCase();
+
+			// Remove characters that are not alphanumeric or a '-'
+			str = str.replace(/[^a-z0-9-]/g, '');
+
+			// Combine multiple dashes into one
+			str = str.replace(/[-]+/g, '-');
+
+			return str;
+		};
+	});
+
+})(angular, Riff);
+
 

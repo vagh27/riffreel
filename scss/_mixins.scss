@@ -1,0 +1,86 @@
+@mixin linear-animation($duration:0.2s, $delay:0, $type:all) {
+	-webkit-transition: $type $duration $delay linear;
+	-moz-transition: $type $duration $delay linear;
+	-o-transition: $type $duration $delay linear;
+	-ms-transition: $type $duration $delay linear;
+	transition: $type $duration $delay linear;
+}
+
+@mixin rotate($deg:45deg){
+	-webkit-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+@mixin opacity($val:1) {
+	opacity:$val;
+	filter: alpha(opacity=($val*100));
+}
+
+@mixin opacity-hover($val:0.8) {
+	@include linear-animation(0.2s,0,opacity);
+	&:hover {
+		opacity:$val;
+		filter: alpha(opacity=($val*100));
+	}
+}
+
+@mixin shadow($color: lighten($gray, 25%)) {
+	-webkit-box-shadow: 1px 1px 8px 0px $color;
+	box-shadow: 1px 1px 8px 0px $color;
+}
+
+@mixin placeholder($color: #fff){
+	&::-webkit-input-placeholder {
+	   color: $color;
+	}
+	&:-moz-placeholder {
+	   color: $color;
+	}
+	&::-moz-placeholder {
+	   color: $color;
+	}
+	&:-ms-input-placeholder {
+	   color: $color;
+	}
+}
+
+@mixin text-hover($color: $blue) {
+	@include linear-animation;
+	&:hover {
+		color: $color;
+	}
+}
+
+@mixin user-select{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+@mixin btn-close($color:$blue, $bgColor: transparent, $hoverBg: $color, $hoverText: #fff){
+	@include linear-animation;
+	background-color: $bgColor;
+	border: 2px solid $color;
+	border-radius: 15px;
+	color: $color;
+	cursor: pointer;
+	height: 30px;
+	line-height: 28px;
+	text-align: center;
+	width: 30px;
+	-webkit-font-smoothing: antialiased;
+	&:after {
+		content: 'x';
+		font-weight: bold;
+		font-size: 16px;
+	}
+	&:hover {
+		@include rotate(-90deg);
+		background-color: $hoverBg;
+		border-color: $color;
+		color: $hoverText;
+	}
+}

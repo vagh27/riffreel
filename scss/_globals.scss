@@ -1,0 +1,129 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+html, body { height: 100%; }
+
+body {
+	background-color: #EBEBEB;
+	font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a {
+	@include linear-animation;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+h3 {
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 50px 0 20px;
+	padding-bottom: 10px;
+	color: rgba(26,26,26,.7);
+	span {
+		font-size: 12px;
+	}
+}
+
+label {
+	color: rgba(26,26,26,.7);
+	font-size: 12px;
+}
+
+header {
+	background: url(../img/bg.jpg) no-repeat center 0;
+	background-attachment: fixed;
+	padding: 25px;
+	margin-bottom: 20px;
+	height: 335px;
+	width: 100%;
+}
+
+nav {
+	font-size: 14px;
+	float: right;
+	text-align: right;
+	width: 70%;
+	li {
+		list-style-type: none;
+		letter-spacing: 2px;
+		display: inline-block;
+	}
+	a {
+		color: $gray;
+		display: block;
+		height: 55px;
+		line-height: 55px;
+		padding: 0 25px;
+		&:hover {
+			color: darken($blue, 10%);
+		}
+	}
+}
+
+.logo {
+	width: 195px;
+}
+
+.round-btn {
+	-webkit-border-radius: 300px;
+	border-radius: 300px;
+	background-color: $blue;
+	color: #fff;
+	display: block;
+	height: 55px;
+	line-height: 55px;
+	margin-left: 25px;
+	padding: 0 30px;
+	&:hover {
+		background-color: $darkBlue;
+		color: #fff;
+	}
+}
+
+.container {
+	margin: 0 auto 60px;
+	max-width: 960px;
+	width: 100%;
+}
+
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+
+.form-group {
+	margin-bottom: 30px;
+}
+
+.form-control {
+	@include placeholder(#ccc);
+	font-size: 12px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 12px;
+}
+
+.btn-close {
+	@include btn-close;
+}
+
+.btn-close-inverted {
+	@include btn-close(#fff, $blue);
+}
+
+.btn-close-knockout {
+	@include btn-close(#fff, transparent, transparent, #fff);
+}

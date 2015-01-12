@@ -1,0 +1,278 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+html, body {
+  height: 100%; }
+
+body {
+  background-color: #EBEBEB;
+  font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  -webkit-transition: all 0.2s 0 linear;
+  -moz-transition: all 0.2s 0 linear;
+  -o-transition: all 0.2s 0 linear;
+  -ms-transition: all 0.2s 0 linear;
+  transition: all 0.2s 0 linear; }
+  a:hover {
+    text-decoration: none; }
+
+h3 {
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 50px 0 20px;
+  padding-bottom: 10px;
+  color: rgba(26, 26, 26, 0.7); }
+  h3 span {
+    font-size: 12px; }
+
+label {
+  color: rgba(26, 26, 26, 0.7);
+  font-size: 12px; }
+
+header {
+  background: url(../img/bg.jpg) no-repeat center 0;
+  background-attachment: fixed;
+  padding: 25px;
+  margin-bottom: 20px;
+  height: 335px;
+  width: 100%; }
+
+nav {
+  font-size: 14px;
+  float: right;
+  text-align: right;
+  width: 70%; }
+  nav li {
+    list-style-type: none;
+    letter-spacing: 2px;
+    display: inline-block; }
+  nav a {
+    color: #444645;
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 25px; }
+    nav a:hover {
+      color: #0dc9c6; }
+
+.logo {
+  width: 195px; }
+
+.round-btn {
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  background-color: #19f0ed;
+  color: #fff;
+  display: block;
+  height: 55px;
+  line-height: 55px;
+  margin-left: 25px;
+  padding: 0 30px; }
+  .round-btn:hover {
+    background-color: #0dc9c6;
+    color: #fff; }
+
+.container {
+  margin: 0 auto 60px;
+  max-width: 960px;
+  width: 100%; }
+
+.my-drop-zone {
+  border: dotted 3px lightgray; }
+
+.nv-file-over {
+  border: dotted 3px red; }
+
+/* Default class applied to drop zones on over */
+.another-file-over-class {
+  border: dotted 3px green; }
+
+.form-group {
+  margin-bottom: 30px; }
+
+.form-control {
+  font-size: 12px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 12px; }
+  .form-control::-webkit-input-placeholder {
+    color: #ccc; }
+  .form-control:-moz-placeholder {
+    color: #ccc; }
+  .form-control::-moz-placeholder {
+    color: #ccc; }
+  .form-control:-ms-input-placeholder {
+    color: #ccc; }
+
+.btn-close {
+  -webkit-transition: all 0.2s 0 linear;
+  -moz-transition: all 0.2s 0 linear;
+  -o-transition: all 0.2s 0 linear;
+  -ms-transition: all 0.2s 0 linear;
+  transition: all 0.2s 0 linear;
+  background-color: transparent;
+  border: 2px solid #19f0ed;
+  border-radius: 15px;
+  color: #19f0ed;
+  cursor: pointer;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+  -webkit-font-smoothing: antialiased; }
+  .btn-close:after {
+    content: 'x';
+    font-weight: bold;
+    font-size: 16px; }
+  .btn-close:hover {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    background-color: #19f0ed;
+    border-color: #19f0ed;
+    color: #fff; }
+
+.btn-close-inverted {
+  -webkit-transition: all 0.2s 0 linear;
+  -moz-transition: all 0.2s 0 linear;
+  -o-transition: all 0.2s 0 linear;
+  -ms-transition: all 0.2s 0 linear;
+  transition: all 0.2s 0 linear;
+  background-color: #19f0ed;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+  -webkit-font-smoothing: antialiased; }
+  .btn-close-inverted:after {
+    content: 'x';
+    font-weight: bold;
+    font-size: 16px; }
+  .btn-close-inverted:hover {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    background-color: #fff;
+    border-color: #fff;
+    color: #fff; }
+
+.btn-close-knockout {
+  -webkit-transition: all 0.2s 0 linear;
+  -moz-transition: all 0.2s 0 linear;
+  -o-transition: all 0.2s 0 linear;
+  -ms-transition: all 0.2s 0 linear;
+  transition: all 0.2s 0 linear;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+  -webkit-font-smoothing: antialiased; }
+  .btn-close-knockout:after {
+    content: 'x';
+    font-weight: bold;
+    font-size: 16px; }
+  .btn-close-knockout:hover {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff; }
+
+.status-bar {
+  background-color: #fd2d32;
+  color: #fff;
+  left: 0;
+  position: fixed;
+  text-align: left;
+  top: 0;
+  width: 100%;
+  z-index: 9999; }
+  .status-bar.blue {
+    background-color: #0dc9c6; }
+  .status-bar span {
+    display: block;
+    font-weight: bold;
+    padding: 20px 60px 20px 20px; }
+  .status-bar .btn-close-knockout {
+    right: 10px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%; }
+
+.ng-modal-overlay {
+  position: fixed;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.7; }
+
+.modal-cont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998; }
+
+.ng-modal-dialog {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px #000;
+  margin: 10% auto 0;
+  position: relative;
+  width: 50%; }
+
+.ng-modal-dialog-content {
+  padding: 30px;
+  text-align: center; }
+  .ng-modal-dialog-content h1 {
+    font-size: 20px;
+    margin: 20px 0; }
+  .ng-modal-dialog-content p {
+    font-size: 16px;
+    margin-bottom: 20px; }
+  .ng-modal-dialog-content a {
+    margin-bottom: 20px; }
+  .ng-modal-dialog-content input[type=text], .ng-modal-dialog-content input[type=email], .ng-modal-dialog-content input[type=password], .ng-modal-dialog-content select {
+    margin-bottom: 30px; }
+  .ng-modal-dialog-content input[type=checkbox] {
+    -webkit-appearance: checkbox; }
+  .ng-modal-dialog-content .btn {
+    margin-bottom: 30px;
+    width: 100%; }
+  .ng-modal-dialog-content .forgot {
+    cursor: pointer;
+    margin-bottom: 0; }
+  .ng-modal-dialog-content input[type=text], .ng-modal-dialog-content input[type=email], .ng-modal-dialog-content input[type=password], .ng-modal-dialog-content textarea, .ng-modal-dialog-content select {
+    display: block;
+    width: 100%; }
+
+.ng-modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+/*# sourceMappingURL=base.css.map */

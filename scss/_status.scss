@@ -1,0 +1,24 @@
+.status-bar {
+	background-color: $red;
+	color: #fff;
+	left: 0;
+	position: fixed;
+	text-align: left;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+	&.blue {
+		background-color: $darkBlue;
+	}
+	span {
+		display: block;
+		font-weight: bold;
+		padding: 20px 60px 20px 20px;
+	}
+	.btn-close-knockout {
+		right: 10px;
+		margin-top: -15px;
+		position: absolute;
+		top: 50%;
+	}
+}

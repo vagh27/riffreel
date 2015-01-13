@@ -5,8 +5,8 @@
 html, body { height: 100%; }
 
 body {
-	background-color: #EBEBEB;
-	font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
+	background-color: #f6f8f8;
+	font-family: $sans;
 }
 
 * {
@@ -26,8 +26,7 @@ a {
 h3 {
 	border-bottom: 1px solid #ccc;
 	color: #333;
-	font-size: 20px;
-	font-weight: normal;
+	font: normal 20px $sans;
 	margin: 50px 0 20px;
 	padding-bottom: 10px;
 	color: rgba(26,26,26,.7);
@@ -38,15 +37,25 @@ h3 {
 
 label {
 	color: rgba(26,26,26,.7);
-	font-size: 12px;
+	font-size: 13px;
+	span {
+		display: block;
+		font-size: 10px;
+		font-weight: normal;
+		margin-top: 4px;
+	}
+}
+
+button {
+	font-family: $sans;
 }
 
 header {
-	background: url(../img/bg.jpg) no-repeat center 0;
+	background: url(../img/bg.jpg) no-repeat center -40px;
 	background-attachment: fixed;
 	padding: 25px;
 	margin-bottom: 20px;
-	height: 335px;
+	height: 240px;
 	width: 100%;
 }
 

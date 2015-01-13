@@ -3,23 +3,23 @@
 
 	<head>
 		<title>RIFF Downloader</title>
-
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/base.css?v1">
 
 		<!-- Fix for old browsers -->
-		<script src="/js/lib/es5-shim/es5-shim.min.js"></script>
+		<script src="js/lib/es5-shim/es5-shim.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<script src="/js/console-sham.js"></script>
+		<script src="js/console-sham.js"></script>
 
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 		<!--[if lt IE 9]>
-			<script src="/js/html5shiv.js"></script>
+			<script src="js/html5shiv.js"></script>
 		<![endif]-->
 
-		<script src="/js/lib/angular/angular.min.js"></script>
-		<script src="/js/lib/angular-file-upload/angular-file-upload.js"></script>
+		<script src="js/lib/angular/angular.min.js"></script>
+		<script src="js/lib/angular-file-upload/angular-file-upload.js"></script>
 
 	</head>
 
@@ -45,7 +45,7 @@
 
 				<div class="col-md-12">
 
-					<h3>GET STARTED</h3>
+					<h3>YOUR INFO</h3>
 
 					<div class="form-group">
 						<label for="email">Email address*</label>
@@ -54,23 +54,25 @@
 
 					<div class="form-group">
 						<label for="project">Project Name*</label>
-						<input type="project" class="form-control" id="project" name="project" ng-model="project" placeholder="e.g. My Trip to Alaska">
+						<input type="project" class="form-control" id="project" name="project" ng-model="project" placeholder="E.g. My Trip to Alaska">
 					</div>
 
+					<h3> KNOW WHAT YOU WANT? TELL US! <span>(optional)</span></h3>
+
 					<div class="form-group">
-						<label for="expectation">In a few words, tell us what you are envisioning your movie to be like.</label>
+						<label for="expectation">
+							How should your riffreel look?
+							<span>Don't know what you want, no problem! However the more direction we have the better!</span></label>
 						<input type="text" class="form-control" id="expectation" name="expectation" ng-model="expectation" placeholder="E.g. - A fast paced movie with a lot of color effects that shows every experience on our trip to Hawaii">
 					</div>
 
-					<h3>TELL US A LITTLE ABOUT WHAT INSPIRES YOU <span>(OPTIONAL)</span></h3>
-
 					<div class="form-group">
-						<label for="specify">Anything specific you recorded that you would like included in the riffreel?</label>
+						<label for="specify">Let us know what we must include.</label>
 						<input type="text" class="form-control" id="specify" name="specify" ng-model="specify" placeholder="E.g. Please include the couple of time lapse clips of the New York City skyline.">
 					</div>
 
 					<div class="form-group">
-						<label for="example">Seen a video online that you enjoyed? Share it with us so we know what you like.</label>
+						<label for="example">Seen a video online that you want to immitate? Share it with us so we can use it as a reference.</label>
 						<input type="text" class="form-control" id="example" name="example" ng-model="example" placeholder="http://">
 					</div>
 

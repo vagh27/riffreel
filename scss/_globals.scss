@@ -38,6 +38,38 @@ h3 {
 label {
 	color: rgba(26,26,26,.7);
 	font-size: 13px;
+	i {
+		@include linear-animation;
+		background-color: $darkBlue;
+		border-radius: 15px;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 10px;
+		height: 15px;
+		line-height: 15px;
+		margin-left: 5px;
+		position: relative;
+		text-align: center;
+		width: 15px;
+		span {
+			@include linear-animation;
+			color: $darkBlue;
+			opacity: 0;
+			left: 20px;
+			position: absolute;
+			text-align: left;
+			top: 0;
+			width: 500px;
+			margin: 0;
+		}
+		&:hover {
+			background-color: darken($darkBlue, 5%);
+			span {
+				opacity: 1;
+			}
+		}
+	}
 	span {
 		display: block;
 		font-size: 10px;

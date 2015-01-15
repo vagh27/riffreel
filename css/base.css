@@ -36,6 +36,42 @@ h3 {
 label {
   color: rgba(26, 26, 26, 0.7);
   font-size: 13px; }
+  label i {
+    -webkit-transition: all 0.2s 0 linear;
+    -moz-transition: all 0.2s 0 linear;
+    -o-transition: all 0.2s 0 linear;
+    -ms-transition: all 0.2s 0 linear;
+    transition: all 0.2s 0 linear;
+    background-color: #0dc9c6;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 10px;
+    height: 15px;
+    line-height: 15px;
+    margin-left: 5px;
+    position: relative;
+    text-align: center;
+    width: 15px; }
+    label i span {
+      -webkit-transition: all 0.2s 0 linear;
+      -moz-transition: all 0.2s 0 linear;
+      -o-transition: all 0.2s 0 linear;
+      -ms-transition: all 0.2s 0 linear;
+      transition: all 0.2s 0 linear;
+      color: #0dc9c6;
+      opacity: 0;
+      left: 20px;
+      position: absolute;
+      text-align: left;
+      top: 0;
+      width: 500px;
+      margin: 0; }
+    label i:hover {
+      background-color: #0cb1af; }
+      label i:hover span {
+        opacity: 1; }
   label span {
     display: block;
     font-size: 10px;

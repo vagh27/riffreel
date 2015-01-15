@@ -67,7 +67,8 @@ label {
       text-align: left;
       top: 0;
       width: 500px;
-      margin: 0; }
+      margin: 0;
+      z-index: -1; }
     label i:hover {
       background-color: #0cb1af; }
       label i:hover span {

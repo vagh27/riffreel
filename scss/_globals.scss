@@ -62,6 +62,7 @@ label {
 			top: 0;
 			width: 500px;
 			margin: 0;
+			z-index: -1;
 		}
 		&:hover {
 			background-color: darken($darkBlue, 5%);

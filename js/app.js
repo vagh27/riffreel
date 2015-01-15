@@ -7,6 +7,23 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 
 	app.controller('AppController', ['$scope', '$http', '$filter', 'FileUploader', function($scope, $http, $filter, FileUploader) {
 
+		// Upres BG image
+		$('header').css('background-image', 'url("../img/bg_full_high.jpg")');
+
+		//smooth scroll
+		$('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 500);
+		        return false;
+		      }
+		    }
+		});
+
 		$scope.status = {};
 		$scope.completed = [];
 
@@ -148,7 +165,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 		}
 	}]);
 
-})(angular, Riff);
+})(angular, Riff, jQuery);
 
 
 (function(ng, app) {
@@ -187,7 +204,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 		};
 	});
 
-})(angular, Riff);
+})(angular, Riff, jQuery);
 
 (function(ng, app) {
 
@@ -212,6 +229,6 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 		};
 	});
 
-})(angular, Riff);
+})(angular, Riff, jQuery);
 
 

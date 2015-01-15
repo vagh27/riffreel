@@ -46,12 +46,35 @@ button {
   font-family: "Open Sans", "Century Gothic", "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", Futura, sans-serif; }
 
 header {
-  background: url(../img/bg.jpg) no-repeat center -40px;
+  background: url(../img/bg_full.jpg) no-repeat center center;
   background-attachment: fixed;
   padding: 25px;
   margin-bottom: 20px;
-  height: 240px;
+  position: relative;
+  height: 100vh;
   width: 100%; }
+  header h1 {
+    color: #fff;
+    font-size: 48px;
+    letter-spacing: -2px;
+    margin: 15% auto 0;
+    max-width: 75%;
+    text-align: center; }
+  header .anchor {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    bottom: 35px;
+    color: #fff;
+    display: block;
+    font-size: 100px;
+    left: 50%;
+    line-height: 100px;
+    margin-left: -50px;
+    position: absolute;
+    width: 100px; }
+    header .anchor:hover {
+      bottom: 30px; }
 
 nav {
   font-size: 14px;
@@ -87,6 +110,9 @@ nav {
   .round-btn:hover {
     background-color: #0dc9c6;
     color: #fff; }
+
+.clear {
+  clear: both; }
 
 .container {
   margin: 0 auto 60px;

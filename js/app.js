@@ -8,7 +8,11 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 	app.controller('AppController', ['$scope', '$http', '$filter', 'FileUploader', function($scope, $http, $filter, FileUploader) {
 
 		// Upres BG image
-		$('header').css('background-image', 'url("../img/bg_full_high.jpg")');
+		var src = "img/bg_full_high.jpg",
+			img = new Image();
+		$(img).load(function() {
+			$('header').css('background-image', 'url(' + src + ')');
+		}).attr("src", src);
 
 		//smooth scroll
 		$('a[href*=#]:not([href=#])').click(function() {

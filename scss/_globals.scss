@@ -21,6 +21,10 @@ a {
 	&:hover {
 		text-decoration: none;
 	}
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
 }
 
 h3 {

@@ -22,7 +22,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 		      if (target.length) {
 		        $('html,body').animate({
 		          scrollTop: target.offset().top
-		        }, 500);
+		        }, 1000);
 		        return false;
 		      }
 		    }

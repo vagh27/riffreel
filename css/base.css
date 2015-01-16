@@ -22,6 +22,9 @@ a {
   transition: all 0.2s 0 linear; }
   a:hover {
     text-decoration: none; }
+  a:focus {
+    outline: none;
+    text-decoration: none; }
 
 h3 {
   border-bottom: 1px solid #ccc;

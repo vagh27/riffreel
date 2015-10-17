@@ -1,6 +1,7 @@
 // Main Application
 var Riff = angular.module('Riff', ['angularFileUpload']);
 
+
 (function(ng, app, $) {
 
 	'use strict';
@@ -30,6 +31,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 
 		$scope.status = {};
 		$scope.completed = [];
+		$scope.problematic = [];
 
 		$scope.test = function(e){
 			console.log(e)
@@ -85,52 +87,58 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 		uploader.onBeforeUploadItem = function(item) {
 			$scope.key = $scope.email ? $scope.email.slice(0, $scope.email.indexOf("@")) : 'undefined';
 			$scope.project = $filter('friendlyUrl')($scope.project);
+
+			var path = 'uploads/' + $scope.email + '/' + $scope.project + '/' + item._file.name;
+
 			item.formData.push({
-				key: $scope.email + '/' + $scope.project + '/' + item._file.name,
-				email: $scope.email
+				key: path,
+				AWSAccessKeyId: 'AKIAIU3SSIN233SQ6TUA',
+				policy: $scope.policy,
+				acl: 'public-read',
+				signature: $scope.signature
 			});
+
 		};
 		uploader.onProgressItem = function(fileItem, progress) {
-			//console.info('onProgressItem', fileItem, progress);
 			$scope.progress = progress;
 		};
 		uploader.onProgressAll = function(progress) {
 			//console.info('onProgressAll', progress);
 		};
 		uploader.onSuccessItem = function(fileItem, response, status, headers) {
-			console.info('onSuccessItem', fileItem, response, status, headers);
-			$scope.completed.push(fileItem);
+			//$scope.completed.push(fileItem);
 		};
 		uploader.onErrorItem = function(fileItem, response, status, headers) {
-			console.info('onErrorItem', fileItem, response, status, headers);
-		};
-		uploader.onCancelItem = function(fileItem, response, status, headers) {
-			//console.info('onCancelItem', fileItem, response, status, headers);
+			$scope.problematic.push(fileItem);
 		};
 		uploader.onCompleteItem = function(fileItem, response, status, headers) {
-			//console.info('onCompleteItem', fileItem, response, status, headers);
-			//$scope.completed.push(fileItem);
+			$scope.completed.push(fileItem);
 		};
 
 		uploader.onCancelItem = function(fileItem, response, status, headers) {
-			//console.info('CANCEL', fileItem, response, status, headers);
+			$scope.problematic.push(fileItem);
 			$scope.cancelled = true;
 		};
 
 
 		uploader.onCompleteAll = function() {
+
 			if (!$scope.cancelAll && $scope.completed.length > 0) {
-				$scope.success = true;
+				$scope.uploadForm = false;
+
+				$scope.success = $scope.problematic.length ? false : true;
+				$scope.problems = $scope.problematic.length ? true : false;
+
 				$http({
 					method: 'POST',
 					url: 'email.php',
 					data: {
 						key: $scope.key,
+						project: $scope.project,
 						email: $scope.email,
 						expectation: $scope.expectation,
 						specify: $scope.specify,
-						example: $scope.example,
-						love: $scope.love
+						instagram: $scope.instagram
 					},
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 				}).
@@ -145,17 +153,32 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 			}
 		};
 
+		$scope.close = function(clear){
+			$scope.uploadForm = false;
+			$scope.problems = false;
+
+			// clear problematic array
+			if (clear) {
+				$scope.problematic = [];
+			}
+		};
+
 		$scope.submit = function(){
 
 			$scope.status = {};
+
+			if (!$scope.project) {
+				$scope.status.text = "Please enter a project name."
+				return false;
+			}
 
 			if (!validateEmail()) {
 				$scope.status.text = "Please enter a valid email."
 				return false;
 			}
 
-			if (!$scope.project) {
-				$scope.status.text = "Please enter a project name."
+			if ($scope.email != $scope.confirmEmail){
+				$scope.status.text = "Emails do not match."
 				return false;
 			}
 
@@ -165,6 +188,7 @@ var Riff = angular.module('Riff', ['angularFileUpload']);
 			};
 
 			$scope.uploading = true;
+			$scope.uploadForm = true;
 			$scope.uploader.uploadAll();
 		}
 	}]);

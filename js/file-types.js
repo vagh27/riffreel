@@ -7,5 +7,6 @@ var fileTypes = [
 	'video/mp4',
 	'video/mpeg',
 	'video/avi',
-	'audio/mpeg'
+	'audio/mpeg',
+	'video/x-ms-wmv'
 ];

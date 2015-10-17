@@ -64,7 +64,7 @@
 		<title>RIFF Downloader</title>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:500, 700,400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/base.css?v1">
+		<link rel="stylesheet" href="css/base.css">
 
 		<!-- Fix for old browsers -->
 		<script src="js/lib/es5-shim/es5-shim.min.js"></script>
@@ -164,25 +164,14 @@
 
 					<div ng-hide="uploader.isUploading">
 						<div ng-show="uploader.isHTML5">
-							<!-- 3. nv-file-over uploader="link" over-class="className" -->
 							<div class="well my-drop-zone" nv-file-over="" uploader="uploader">
 								Drag videos here
 							</div>
-
-							<!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}"
-							<div nv-file-drop="" uploader="uploader" options="{ url: '/foo' }">
-								<div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
-									Another drop zone with its own settings
-								</div>
-							</div>-->
 						</div>
 
-						<!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
 						<label for="files" class="btn btn-info">Choose files to upload</label>
 						<input type="file" nv-file-select="" id="files" uploader="uploader" multiple style="visibility: hidden"  /><br/>
 
-						<!-- Single
-						<input type="file" nv-file-select="" uploader="uploader" /> -->
 					</div>
 				</div>
 
@@ -217,9 +206,6 @@
 									<span ng-show="item.isError">Error <i class="glyphicon glyphicon-remove"></i></span>
 								</td>
 								<td nowrap>
-									<!--<button type="button" class="btn btn-success btn-xs" ng-click="item.upload(); test(item)" ng-show="(item.isCancel && !item.isReady) || (!item.isSuccess && item.isUploaded)">
-										<span class="glyphicon glyphicon-upload"></span> Retry
-									</button>-->
 									<button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
 										<span class="glyphicon glyphicon-ban-circle"></span> Cancel
 									</button>
@@ -230,31 +216,9 @@
 							</tr>
 						</tbody>
 					</table>
-
-					<!--<div>
-						<button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
-							<span class="glyphicon glyphicon-upload"></span> Upload all
-						</button>
-						<button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
-							<span class="glyphicon glyphicon-ban-circle"></span> Cancel all
-						</button>
-						<button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
-							<span class="glyphicon glyphicon-trash"></span> Remove all
-						</button>
-					</div>-->
-
-
-
 				</div>
 
 				<div class="col-md-12">
-
-					<!-- <div ng-show="uploading">
-						Queue progress:
-						<div class="progress" style="">
-							<div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
-						</div>
-					</div> -->
 
 					<button
 						type="button"
@@ -268,6 +232,7 @@
 					<button type="button" class="btn btn-warning btn-s" ng-click="cancelAll = true; uploader.cancelAll();" ng-show="uploader.isUploading">
 						<span class="glyphicon glyphicon-ban-circle"></span> Cancel all
 					</button>
+
 				</div>
 			</div>
 		</div>
@@ -326,16 +291,13 @@
 		<script src="js/file-types.js"></script>
 		<script src="js/app.js?v2"></script>
 		<script>
-  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-64923175-1', 'auto');
-		  ga('send', 'pageview');
-
+			ga('create', 'UA-64923175-1', 'auto');
+			ga('send', 'pageview');
 		</script>
-
-
 	</body>
 </html>
